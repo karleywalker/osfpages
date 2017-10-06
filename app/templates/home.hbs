@@ -2,10 +2,14 @@
     <div class="editMenu">
         <div class="container p-sm">
             <div class="row">
-                <div class="col-xs-2">
-                    {{#if editMode}}
-                        {{layer-template-select theme=model.theme}}
-                    {{/if}}
+                <div class="col-xs-2 clearfix">
+                    <div class="pull-left">
+                        {{#if editMode}}
+                          {{layer-template-select theme=model.theme}}
+                        {{else}}
+                          {{layer-projects-select theme=model.theme}}
+                       {{/if}}
+                    </div>
                 </div>
                 <div class="col-xs-2">
                 {{#if editMode}}
@@ -40,7 +44,7 @@
                     <div class="pull-right">
                         <button class="btn-outline-cus editModeBtn" {{action 'checkSaveState'}} >
                             {{#if editMode}}
-                                <i class="material-icons">close</i>Finish editing 
+                                <i class="material-icons">close</i>Finish editing
                             {{else}}
                                 <i class="material-icons">edit</i> Edit
                             {{/if}}
@@ -88,4 +92,3 @@
         {{/modal.footer}}
     {{/bs-modal}}
 {{/if}}
-
